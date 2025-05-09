@@ -1,4 +1,5 @@
 # Test Automation Foundations
+
 This is the repository for the LinkedIn Learning course `Test Automation Foundations`. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![lil-thumbnail-url]
@@ -25,6 +26,7 @@ To resolve this issue:
 	Commit changes using this command: git commit -m "some message"
 
 ## Installing
+
 1. To use these exercise files, you must have the following installed:
 	- [list of requirements for course]
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
