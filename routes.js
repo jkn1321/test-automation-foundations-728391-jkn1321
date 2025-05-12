@@ -63,7 +63,7 @@ module.exports = (app, db) => {
         });
     });
 
-    // Add item to cart
+    // Add item to cart route
     app.post('/add-to-cart', validateInput, (req, res) => {
         const { itemId } = req.body;
 
@@ -93,7 +93,7 @@ module.exports = (app, db) => {
         });
     });
 
-    // Remove item from database
+    // Remove item from database route
     app.post('/remove-item', (req, res) => {
         const { itemId } = req.body; // Assuming the item ID is sent in the request body
 
@@ -170,6 +170,7 @@ module.exports = (app, db) => {
         });
     });
 
+    // Reset cart route
     app.post('/reset-cart', (req, res) => {
         db.run('DELETE FROM cart', (err) => {
             if (err) {
@@ -181,6 +182,7 @@ module.exports = (app, db) => {
         });
     });
 
+    // Checkout route
     app.get('/checkout', (req, res, next) => {
         // Fetch items in the cart
         const query = `

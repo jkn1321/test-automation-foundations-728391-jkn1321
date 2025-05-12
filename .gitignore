@@ -4,3 +4,4 @@ node_modules
 npm-debug.log
 .nyc_output/
 shop.db
+package-lock.json
