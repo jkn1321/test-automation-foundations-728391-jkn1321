@@ -27,7 +27,6 @@
     "supertest": "^7.1.0"
   },
   "devDependencies": {
-    "chromedriver": "^135.0.4",
-    "nyc": "^17.1.0"
+    "chromedriver": "^135.0.4"
   }
 }
