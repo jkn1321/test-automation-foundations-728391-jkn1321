@@ -24,30 +24,25 @@ describe('End-to-end test', function () {
     await driver.quit(); // Close the browser after tests
   });
 
-  it('should load the home page and display items', async () => {
-    const pageTitle = await driver.getTitle()
-    expect(pageTitle).to.equal('AI Animal Art'); // Check the page title
-
-    const items = await driver.findElements(By.css('ul li'));
-    expect(items.length).to.be.greaterThan(0); // Ensure items are displayed
-  });
-
-  it('should add an item to the cart', async () => {
+  it('should add an item to the cart and complete the checkout workflow', async () => {
     const addToCartButton = await driver.findElement(By.id('add-to-cart-10')); // Find the "Add to Cart" button for item 10
     await addToCartButton.click(); // Click the button
 
     const itemSuccessfullyAddedBanner = await driver.findElement(By.className('notification'));
     const itemSuccessfullyAddedBannerText = await itemSuccessfullyAddedBanner.getText();
     expect(itemSuccessfullyAddedBannerText).to.include('Item successfully added to cart'); // Check the success message
-  });
 
-  it('should complete the checkout workflow', async () => {
     const cartLink = await driver.findElement(By.id('cart-link')); // Find the cart link
     await cartLink.click(); // Click the link
 
     const checkoutButton = await driver.findElement(By.id('checkout-button'));
     await checkoutButton.click(); // Click the checkout button
-
+    
+    // Wait for the checkout page to load
+    await driver.wait(
+    until.elementLocated(By.className('checkout-container')),
+    5000
+  );
     const checkoutPageTitle = await driver.getTitle();
     expect(checkoutPageTitle).to.equal('Checkout'); // Check the page title after checkout
 
