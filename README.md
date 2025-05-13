@@ -31,7 +31,8 @@ The test project is a Node.js project.
 
 1. Run `npm install` to get started and install all dependencies.
 1. Open up the project in codespaces
-1. View `package.jsonn` to see the scripts available to run in this project. Scripts include: **npm start**
+1. View `package.json` to see the scripts available to run in this project. Scripts include: **npm start**
+
 ## Instructor
 
 Instructor name
