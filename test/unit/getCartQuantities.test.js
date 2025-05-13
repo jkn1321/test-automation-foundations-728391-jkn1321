@@ -5,7 +5,7 @@ const getCartQuantities = require('../../middleware/getCartQuantities');
 const { expect } = chai;
 
 describe('Middleware: getCartQuantities', () => {
-  it('should calculate cart quantities and attach them to req', (done) => {
+  it('should calculate cart quantities and attach them to req', () => {
     const req = {
       items: [
         { id: 1, quantity: 2 },
@@ -20,10 +20,9 @@ describe('Middleware: getCartQuantities', () => {
 
     expect(req.cartQuantities).to.deep.equal({ 1: 2, 2: 3 });
     expect(next.calledOnce).to.be.true;
-    done();
   });
 
-  it('should set cartQuantities to an empty object if req.items is missing', (done) => {
+  it('should set cartQuantities to an empty object if req.items is missing', () => {
     const req = {};
     const res = {};
     const next = sinon.spy();
@@ -33,10 +32,9 @@ describe('Middleware: getCartQuantities', () => {
 
     expect(req.cartQuantities).to.deep.equal({});
     expect(next.calledOnce).to.be.true;
-    done();
   });
 
-  it('should set cartQuantities to an empty object if req.items is empty', (done) => {
+  it('should set cartQuantities to an empty object if req.items is empty', () => {
     const req = { items: [] };
     const res = {};
     const next = sinon.spy();
@@ -46,6 +44,5 @@ describe('Middleware: getCartQuantities', () => {
 
     expect(req.cartQuantities).to.deep.equal({});
     expect(next.calledOnce).to.be.true;
-    done();
   });
 });
