@@ -1,7 +1,6 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const calculateTotalPrice = require('../../middleware/calculateTotalPrice');
-
 const { expect } = chai;
 
 describe('Middleware: calculateTotalPrice', () => {
