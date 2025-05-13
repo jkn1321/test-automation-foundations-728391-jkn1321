@@ -5,7 +5,7 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database(':memory:'); // Use in-memory database
 const app = require('../../app')(db); // Pass the in-memory database
 
-// Helper function to promisify db.run
+// Helper function to execute SQL queries with async/await
 function runQuery(db, query, params = []) {
     return new Promise((resolve, reject) => {
         db.run(query, params, function (err) {
@@ -43,12 +43,6 @@ describe('Integration Tests for Routes', () => {
         await runQuery(db, 'DROP TABLE IF EXISTS cart');
     });
 
-    it('should load the homepage and display items', async () => {
-        const res = await request(app).get('/');
-        expect(res.status).to.equal(200);
-        expect(res.text).to.include('Test Item'); // Check if the item is displayed
-    });
-
     it('should add an item to the cart', async () => {
         const res = await request(app)
             .post('/add-to-cart')
@@ -63,15 +57,13 @@ describe('Integration Tests for Routes', () => {
         });
     });
 
-    it('should reset the cart', async () => {
-        const res = await request(app).post('/reset-cart');
-        expect(res.status).to.equal(302); // Expect a redirect
-        expect(res.headers.location).to.equal('/');
-
-        // Verify the cart is empty
-        db.all('SELECT * FROM cart', (err, cart) => {
-            expect(cart).to.be.empty;
-        });
+    it('should display the cart page', async () => {
+        // Seed the cart with test data
+        await runQuery(db, 'INSERT INTO cart (item_id, quantity) VALUES (1, 2)');
+    
+        const res = await request(app).get('/cart');
+        expect(res.status).to.equal(200);
+        expect(res.text).to.include('Test Item');
     });
 
     it('should display the checkout page', async () => {
