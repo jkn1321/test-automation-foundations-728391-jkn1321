@@ -1,6 +1,6 @@
 const { Builder, By, until } = require('selenium-webdriver');
-const chai = require('chai');
 const chrome = require('selenium-webdriver/chrome'); // Import Chrome options
+const chai = require('chai');
 const { expect } = chai;
 
 describe('End-to-end test', function () {
