@@ -15,7 +15,7 @@ function runQuery(db, query, params = []) {
     });
 }
 
-describe('Integration Tests for Routes', () => {
+describe('Integration tests for routes', () => {
     before(async () => {
         // Create tables in the in-memory database
         await runQuery(db, `
@@ -58,7 +58,6 @@ describe('Integration Tests for Routes', () => {
     });
 
     it('should display the cart page', async () => {
-        // Seed the cart with test data
         await runQuery(db, 'INSERT INTO cart (item_id, quantity) VALUES (1, 2)');
     
         const res = await request(app).get('/cart');
@@ -67,7 +66,6 @@ describe('Integration Tests for Routes', () => {
     });
 
     it('should display the checkout page', async () => {
-        // Seed the cart with test data
         await runQuery(db, 'INSERT INTO cart (item_id, quantity) VALUES (1, 2)');
     
         const res = await request(app).get('/checkout');

@@ -72,7 +72,7 @@ module.exports = (app, db) => {
                 return res.status(500).send('Error querying cart');
             }
             if (row) {
-                if (row.quantity < 5) {
+                if (row.quantity < 10) {
                     db.run('UPDATE cart SET quantity = quantity + 1 WHERE item_id = ?', [itemId], (err) => {
                         if (err) {
                             return res.status(500).send('Error updating cart');
@@ -118,8 +118,8 @@ module.exports = (app, db) => {
     app.post('/update-quantity', (req, res) => {
         const { itemId, quantity } = req.body;
 
-        // Parse the quantity as an integer and ensure it's within the allowed range (0 to 5)
-        const validQuantity = Math.max(0, Math.min(5, parseInt(quantity, 10)));
+        // Parse the quantity as an integer and ensure it's within the allowed range (0 to 10)
+        const validQuantity = Math.max(0, Math.min(10, parseInt(quantity, 10)));
 
         if (isNaN(validQuantity)) {
             return res.status(400).send('Invalid quantity');

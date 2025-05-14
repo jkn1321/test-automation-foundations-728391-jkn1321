@@ -47,7 +47,7 @@
             <form action="/update-quantity" method="POST">
               <input type="hidden" name="itemId" value="<%= item.id %>">
               <select name="quantity" onchange="this.form.submit()">
-                <% for (let i=0; i <=5; i++) { %>
+                <% for (let i=0; i <=10; i++) { %>
                   <option value="<%= i %>" <%=item.quantity===i ? 'selected' : '' %>><%= i %>
                   </option>
                   <% } %>

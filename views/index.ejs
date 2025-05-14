@@ -31,8 +31,8 @@
 
     ul {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      /* Responsive grid */
+      grid-template-columns: repeat(5, 1fr);
+      /* 5 items per row */
       gap: 20px;
       /* Space between grid items */
       list-style: none;
@@ -79,11 +79,11 @@
   </style>
   <script>
     setTimeout(() => {
-        const notification = document.querySelector('.notification');
-        if (notification) {
-            notification.style.display = 'none';
-        }
-    }, 5000); // Hide after 3 seconds
+      const notification = document.querySelector('.notification');
+      if (notification) {
+        notification.style.display = 'none';
+      }
+    }, 3000); // Hide after 3 seconds
   </script>
 </head>
 
@@ -95,7 +95,7 @@
       </span>)</a>
   </header>
   <h1>AI art for sale</h1>
-    <% if (message) { %>
+  <% if (message) { %>
     <div class="notification">
       <%= decodeURIComponent(message) %>
     </div>
@@ -111,12 +111,12 @@
             </p>
             <form action="/add-to-cart" method="POST">
               <input type="hidden" name="itemId" value="<%= item.id %>">
-              <button id="add-to-cart-<%= items.indexOf(item) + 1 %>" type="submit" <%=cartQuantities[item.id]>= 5 ?
+              <button id="add-to-cart-<%= items.indexOf(item) + 1 %>" type="submit" <%=cartQuantities[item.id]>= 10 ?
                 'disabled' : '' %>>
                 Add to cart
               </button>
             </form>
-            <% if (cartQuantities[item.id]>= 5) { %>
+            <% if (cartQuantities[item.id]>= 10) { %>
               <p style="color: rgb(116, 116, 116);">Maximum quantity reached</p>
               <% } %>
                 <% if (showRemoveForm) { %>

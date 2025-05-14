@@ -1,7 +1,6 @@
 const chai = require('chai');
 const sinon = require('sinon');
 const validateInput = require('../../middleware/validateInput');
-
 const { expect } = chai;
 
 describe('Middleware: validateInput', () => {
