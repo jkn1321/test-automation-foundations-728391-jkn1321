@@ -1,51 +1,36 @@
 # Test Automation Foundations
 
-This is the repository for the LinkedIn Learning course `Test Automation Foundations`. The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course `Test Automation Foundations`. The full course is available from [LinkedIn Learning](https://www.linkedin.com/learning/test-automation-foundations).
 
 ![lil-thumbnail-url]
 
 ## Course Description
 
-_See the readme file in the main branch for updated instructions and information._
-## Instructions
-This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
+Automated testing relies on scripting and frameworks like Selenium to prove that products work as expected. Test automation is an enormous time-saver, and it's crucial to continuous integration, continuous delivery, and agile software development. If you're employed in QA, DevOps, or IT, you need to know the basics. This course covers the foundations of test automation, as well as different strategies for implementation. Meaghan explains what kinds of tests to use, how to choose the right test tools, and how to plan and execute test automation projects. She also describes strategies to maintain automation over time: adding new tests, updating old tests, and resolving failures.
 
-## Branches
-The branches are structured to correspond to the videos in the course. The naming convention is `CHAPTER#_MOVIE#`. As an example, the branch named `02_03` corresponds to the second chapter and the third video in that chapter. 
-Some branches will have a beginning and an end state. These are marked with the letters `b` for "beginning" and `e` for "end". The `b` branch contains the code as it is at the beginning of the movie. The `e` branch contains the code as it is at the end of the movie. The `main` branch holds the final state of the code when in the course.
+## About this repository
 
-When switching from one exercise files branch to the next after making changes to the files, you may get a message like this:
+This repository hosts the code for an application called AI Animal Art. This is an application built with [Node.js](https://github.com/nodejs/node), and [Express](https://github.com/expressjs/express), a web framework for Node.js.
 
-    error: Your local changes to the following files would be overwritten by checkout:        [files]
-    Please commit your changes or stash them before you switch branches.
-    Aborting
+There are tests for the application written in the tests folder. There are three different types of tests: unit, integration, and UI.
 
-To resolve this issue:
-	
-    Add changes to git using this command: git add .
-	Commit changes using this command: git commit -m "some message"
+##  Instructions
 
-## Installing
+### Run the test application
 
-The test project is a Node.js project. 
+To run the test application and use it in a browser, complete the following steps:
 
-1. Run `npm install` to get started and install all dependencies.
-1. Open up the project in codespaces
-1. View `package.json` to see the scripts available to run in this project. Scripts include: **npm start**
+1. Start a new Codespaces instance by going to the Code dropdown, selecting the Codespaces tab, and then Selecting the `+` button to create a new codespace on the main branch.
+1. Once the codespace is setup, open the terminal.
+1. In the terminal, type `npm install` and press enter to install all dependencies.
+1. Next type `npm start` to start the local server.
+1. The server starts up at [localhost:3000](http://localhost:3000). Navigate to that URL, or select **Open in Browser** in the pop-up that appears once the server is running.
+1. Explore the test application.
 
 ## Instructor
 
-Instructor name
+Meaghan currently focuses on creating and delivering learning experiences centered around emerging technology. Meaghan has a superpower in quality engineering and has worked in the QA field for nearly a decade, working at Microsft, GitHub, and startups. Meaghan has a passion for teaching and has spent years speaking at conferences and delivering online learning content.
 
-Instructor description
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/meaghan-lewis).
 
-                            
-
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/).
-
-
-[0]: # (Replace these placeholder URLs with actual course URLs)
-
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA
 
