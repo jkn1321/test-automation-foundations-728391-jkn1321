@@ -2,8 +2,6 @@
 
 This is the repository for the LinkedIn Learning course `Test Automation Foundations`. The full course is available from [LinkedIn Learning](https://www.linkedin.com/learning/test-automation-foundations).
 
-![lil-thumbnail-url]
-
 ## Course Description
 
 Automated testing relies on scripting and frameworks like Selenium to prove that products work as expected. Test automation is an enormous time-saver, and it's crucial to continuous integration, continuous delivery, and agile software development. If you're employed in QA, DevOps, or IT, you need to know the basics. This course covers the foundations of test automation, as well as different strategies for implementation. Meaghan explains what kinds of tests to use, how to choose the right test tools, and how to plan and execute test automation projects. She also describes strategies to maintain automation over time: adding new tests, updating old tests, and resolving failures.
